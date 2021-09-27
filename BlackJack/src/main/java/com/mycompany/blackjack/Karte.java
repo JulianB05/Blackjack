@@ -14,9 +14,18 @@ public class Karte {
     private Kartenfarbe farbe;
     private Kartenwert wert;
     
-    public Karte(){
+    public Karte(Kartenfarbe farbe, Kartenwert wert){
         
-        
+        this.farbe = farbe;
+        this.wert = wert;
     }
     
+    public int getKartenwert(){
+        
+        return wert.getZahlenwert();
+    }
+    @Override
+    public String toString(){
+        return wert+"-"+farbe;
+    }
 }
