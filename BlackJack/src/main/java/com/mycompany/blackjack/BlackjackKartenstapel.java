@@ -46,7 +46,7 @@ public class BlackjackKartenstapel implements Kartenstapel{
     @Override
     public String toString(){
         String res="";
-        for (int i = 0; i > karten.size(); i++) {
+        for (int i = 0; i < karten.size(); i++) {
             res += karten.get(i).toString()+"\n";
         }
         return res;
