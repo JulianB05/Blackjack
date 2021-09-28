@@ -5,6 +5,7 @@
  */
 package com.mycompany.blackjack;
 
+import Karte.BlackjackKartenstapel;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
