@@ -5,9 +5,6 @@
  */
 package Karte;
 
-import Spieler.Spieler;
-import java.util.ArrayList;
-
 /**
  *
  * @author Julian
@@ -19,8 +16,6 @@ public class Main {
         BlackjackKartenstapel stapel = new BlackjackKartenstapel();
         System.out.println(stapel.toString());
         
-        Spieler.Spieler spieler = new Spieler("mongo", )
-//kartenInHand.add(new Karte(Kartenfarbe.HERZ, Kartenwert.ASS))
     }
 }
 

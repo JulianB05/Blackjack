@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Spieler;
+package Karte;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 
 /**
@@ -14,16 +15,17 @@ import java.util.ArrayList;
  */
 public class Spieler extends Person{
     
-    private String nickname;
-    private ArrayList<Karte.Karte> kartenInHand;
+    protected String nickname;
+    protected ArrayList<Karte> kartenInHand;
 
-    public Spieler(String nickname, ArrayList<Karte.Karte> kartenInHand){
+    public Spieler(String nickname, String name, String nachname, Date geburtsdatum){
         
+        super(name, nachname, geburtsdatum);
         this.nickname = nickname;  
         this.kartenInHand = kartenInHand;
     }
     
-    public void nimmKarten(Karte.Karte k){
+    public void nimmKarten(Karte k){
         
         kartenInHand.add(k);
     }
@@ -40,7 +42,8 @@ public class Spieler extends Person{
             if (kartenInHand.get(i).getKartenwert() == 11) {
                     ass++;
             }
-        }    
+        }  
+        
         if (res < 21) {
             
             return res - (10*ass);

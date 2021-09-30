@@ -14,7 +14,7 @@ import java.util.Random;
  */
 public class BlackjackKartenstapel implements Kartenstapel{
 
-    private ArrayList<Karte> karten;
+    protected ArrayList<Karte> karten;
     
     @Override
     public void mischen() {

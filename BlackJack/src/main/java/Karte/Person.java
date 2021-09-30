@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Spieler;
+package Karte;
 
 import java.util.Date;
 
@@ -13,9 +13,9 @@ import java.util.Date;
  */
 public class Person {
     
-    private String name;
-    private String nachname;
-    private long geburtsdatum;
+    protected String name;
+    protected String nachname;
+    protected long geburtsdatum;
     
     public Person(String name, String nachname, Date geburtsdatum){
     
