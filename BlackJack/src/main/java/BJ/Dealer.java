@@ -16,12 +16,14 @@ public class Dealer extends Spieler{
     
     protected BlackjackKartenstapel stapel;
     
-    public Dealer(BlackjackKartenstapel stapel, String nickname, String name, String nachname, Date geburtsdatum){
+    public Dealer(String nickname, String name, String nachname, Date geburtsdatum){
        
         super(nickname, name, nachname, geburtsdatum);
         this.stapel = stapel;  
-        this.kartenInHand = new ArrayList<>();
+        this.kartenInHand = new ArrayList<>();     
     }
+
+    
     
     public void gibKarte(Spieler s){
         
