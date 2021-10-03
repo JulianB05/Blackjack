@@ -53,4 +53,9 @@ public class Spieler extends Person{
             return res;
         }  
     }
+    
+    public void entferneAllekarten(){
+        
+        kartenInHand.clear();
+    }
 }
