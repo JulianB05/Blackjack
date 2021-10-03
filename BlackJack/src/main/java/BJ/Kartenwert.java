@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Karte;
+package BJ;
 
 /**
  *
@@ -28,11 +28,14 @@ public enum Kartenwert{
     
     private int Zahlenwert;
     
-    public int getZahlenwert(){
-        return Zahlenwert;
-    }
     private Kartenwert(int wert){
+        
         Zahlenwert = wert;
+    }
+    
+    public int getZahlenwert(){
+        
+        return Zahlenwert;
     }
 }
   

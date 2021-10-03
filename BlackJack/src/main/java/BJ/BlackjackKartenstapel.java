@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Karte;
+package BJ;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -43,6 +43,10 @@ public class BlackjackKartenstapel implements Kartenstapel{
         }       
     }
     
+    public void stapelinitialisieren() {
+        
+    }
+    
     @Override
     public String toString(){
         String res="";
@@ -51,4 +55,5 @@ public class BlackjackKartenstapel implements Kartenstapel{
         }
         return res;
     }
+
 }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Karte;
+package BJ;
 
 /**
  *
@@ -14,8 +14,7 @@ public class Main {
     public static void main(String[] args) {
         
         BlackjackKartenstapel stapel = new BlackjackKartenstapel();
-        System.out.println(stapel.toString());
-        
+        System.out.println(stapel.toString());   
     }
 }
 

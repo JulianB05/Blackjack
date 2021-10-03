@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Karte;
+package BJ;
 
 /**
  *
@@ -12,4 +12,5 @@ package Karte;
 public interface Kartenstapel {
     
     public void mischen();
+    public void stapelinitialisieren();
 }
