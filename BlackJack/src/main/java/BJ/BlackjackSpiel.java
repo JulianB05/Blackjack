@@ -1,7 +1,5 @@
 package BJ;
 
-import BJ.Dealer;
-import BJ.Spieler;
 import java.util.Date;
 import javax.swing.JOptionPane;
 /**

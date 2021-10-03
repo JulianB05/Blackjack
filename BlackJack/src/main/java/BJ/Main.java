@@ -13,8 +13,11 @@ public class Main {
     
     public static void main(String[] args) {
         
-        BlackjackKartenstapel stapel = new BlackjackKartenstapel();
-        System.out.println(stapel.toString());   
+        //BlackjackKartenstapel stapel = new BlackjackKartenstapel();
+        //System.out.println(stapel.toString());
+        
+        BlackjackSpiel blackjackSpiel = new BlackjackSpiel();
+        blackjackSpiel.spieleConsole();
     }
 }
 
