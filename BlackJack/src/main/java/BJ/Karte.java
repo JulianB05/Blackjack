@@ -10,40 +10,43 @@ package BJ;
  * @author Julian
  */
 public class Karte {
-    
+
     private Kartenfarbe farbe;
     private Kartenwert wert;
-    
-    public Karte(Kartenfarbe farbe, Kartenwert wert){
-        
+
+    public Karte(Kartenfarbe farbe, Kartenwert wert) {
+
         this.farbe = farbe;
         this.wert = wert;
     }
-    
-    public int getKartenwert(){
-        
+
+    public int getKartenwert() {
+
         return wert.getZahlenwert();
     }
-    
-    public String getFarbe(){
-        
-        return "Farbe-"+farbe;
+
+    public String getFarbe() {
+
+        return "Farbe-" + farbe;
     }
-    public void setFarbe(Kartenfarbe farbe){
-        
-        this.farbe = farbe;  
+
+    public void setFarbe(Kartenfarbe farbe) {
+
+        this.farbe = farbe;
     }
-    public String getWert(){
-        
-        return "Wert-"+wert;
+
+    public String getWert() {
+
+        return "Wert-" + wert;
     }
-    public void setWert(Kartenwert wert){
-        
+
+    public void setWert(Kartenwert wert) {
+
         this.wert = wert;
     }
 
     @Override
-    public String toString(){
-        return wert+"-"+farbe;
+    public String toString() {
+        return farbe.name().toUpperCase() + "-" + wert.name().toUpperCase();
     }
 }

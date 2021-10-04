@@ -9,34 +9,31 @@ package BJ;
  *
  * @author Julian
  */
+public enum Kartenwert {
 
-public enum Kartenwert{
-        
-    Zwei(2),
-    Drei(3),
-    Vier(4),
-    Fünf(5),
-    Sechs(6),
-    Sieben(7),
-    Acht(8),
-    Neun(9),
-    Zehn(10),
+    ZWEI(2),
+    DREI(3),
+    VIER(4),
+    FEUNF(5),
+    SECHS(6),
+    SIEBEN(7),
+    ACHT(8),
+    NEUN(9),
+    ZEHN(10),
     BUBE(10),
     DAME(10),
-    KÖNIG(10),
+    KOENIG(10),
     ASS(11);
-    
+
     private int Zahlenwert;
-    
-    private Kartenwert(int wert){
-        
+
+    private Kartenwert(int wert) {
+
         Zahlenwert = wert;
     }
-    
-    public int getZahlenwert(){
-        
+
+    public int getZahlenwert() {
+
         return Zahlenwert;
     }
 }
-  
-

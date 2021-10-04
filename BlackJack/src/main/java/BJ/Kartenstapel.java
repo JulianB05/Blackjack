@@ -10,7 +10,8 @@ package BJ;
  * @author Julian
  */
 public interface Kartenstapel {
-    
+
     public void mischen();
+
     public void stapelinitialisieren();
 }

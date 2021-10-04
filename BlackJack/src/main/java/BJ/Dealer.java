@@ -12,23 +12,27 @@ import java.util.Date;
  *
  * @author Julian
  */
-public class Dealer extends Spieler{
-    
-    protected BlackjackKartenstapel stapel;
-    
-    public Dealer(String nickname, String name, String nachname, Date geburtsdatum){
-       
+public class Dealer extends Spieler {
+
+    protected BlackjackKartenstapel stapel = new BlackjackKartenstapel();
+
+    public Dealer(String nickname, String name, String nachname, Date geburtsdatum) {
+
         super(nickname, name, nachname, geburtsdatum);
-        this.stapel = stapel;  
-        this.kartenInHand = new ArrayList<>();     
+        this.stapel = stapel;
+        this.kartenInHand = new ArrayList<>();
     }
 
-    
-    
-    public void gibKarte(Spieler s){
-        
+    public void gibKarte(Spieler s) {
+
         s.nimmKarten(stapel.karten.get(0));
         stapel.karten.remove(0);
-        
-    } 
+
+    }
+
+    @Override
+    public String toString() {
+        return "Dealer{" + "stapel=" + stapel + '}' + super.toString();
+    }
+
 }
