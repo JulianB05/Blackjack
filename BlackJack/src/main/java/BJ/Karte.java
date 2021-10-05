@@ -25,25 +25,23 @@ public class Karte {
         return wert.getZahlenwert();
     }
 
-    public String getFarbe() {
+    public Kartenfarbe getFarbe() {
+        return farbe;
+    }
 
-        return "Farbe-" + farbe;
+    public Kartenwert getWert() {
+        return wert;
     }
 
     public void setFarbe(Kartenfarbe farbe) {
-
         this.farbe = farbe;
     }
 
-    public String getWert() {
-
-        return "Wert-" + wert;
-    }
-
     public void setWert(Kartenwert wert) {
-
         this.wert = wert;
     }
+
+    
 
     @Override
     public String toString() {

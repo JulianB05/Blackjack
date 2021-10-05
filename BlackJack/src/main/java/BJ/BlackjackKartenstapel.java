@@ -20,13 +20,12 @@ public class BlackjackKartenstapel implements Kartenstapel {
         karten = new ArrayList<>();
         stapelinitialisieren();
         mischen();
-
     }
 
     public void mischen() {
 
         Random r = new Random();
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 1000; i++) {
 
             int z1 = r.nextInt(52);
             int z2 = r.nextInt(52);

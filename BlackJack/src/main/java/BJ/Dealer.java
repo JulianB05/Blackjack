@@ -27,12 +27,10 @@ public class Dealer extends Spieler {
 
         s.nimmKarten(stapel.karten.get(0));
         stapel.karten.remove(0);
-
     }
 
     @Override
     public String toString() {
         return "Dealer{" + "stapel=" + stapel + '}' + super.toString();
     }
-
 }
