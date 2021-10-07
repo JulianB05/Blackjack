@@ -20,8 +20,10 @@ public class MeinSpiel extends javax.swing.JFrame {
      * Creates new form MeinSpiel
      */
     private ArrayList<JLabel> lblSpielerKarten;
-    private BlackjackSpiel hintergrundspiel;
-    protected int count;
+    private BlackjackSpiel hintergrundspiel = new BlackjackSpiel();
+    protected int count = 0;
+    private Spieler spieler ;
+    private Dealer dealer;
     
     public MeinSpiel() {
         initComponents();
@@ -32,6 +34,8 @@ public class MeinSpiel extends javax.swing.JFrame {
         lblSpielerKarten.add(lblSpielerKarte4);
         lblSpielerKarten.add(lblSpielerKarte5);
         hintergrundspiel = new BlackjackSpiel();
+        spieler = hintergrundspiel.getSpieler();
+        dealer = hintergrundspiel.getDealer();
 
     }
 
@@ -59,6 +63,8 @@ public class MeinSpiel extends javax.swing.JFrame {
         lblSpielerKarte8 = new javax.swing.JLabel();
         lblSpielerKarte9 = new javax.swing.JLabel();
         lblSpielerKarte10 = new javax.swing.JLabel();
+        SpielerPunkte = new javax.swing.JLabel();
+        DealerPunkte = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -91,20 +97,18 @@ public class MeinSpiel extends javax.swing.JFrame {
         lblSpielerKarte1.setMinimumSize(new java.awt.Dimension(59, 91));
         lblSpielerKarte1.setPreferredSize(new java.awt.Dimension(59, 91));
 
+        SpielerPunkte.setText("Spieler Punkte:");
+
+        DealerPunkte.setText("Dealer Punkte:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnHold)
-                            .addComponent(btnNeueKarte)
-                            .addComponent(btnNeueRunde))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(lblSpielerKarte1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblSpielerKarte2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -125,11 +129,21 @@ public class MeinSpiel extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblSpielerKarte6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(285, 285, 285))))
+                        .addGap(285, 285, 285))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnHold)
+                            .addComponent(btnNeueKarte)
+                            .addComponent(btnNeueRunde))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(SpielerPunkte)
+                            .addComponent(DealerPunkte))
+                        .addGap(224, 224, 224))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,32 +151,37 @@ public class MeinSpiel extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(lblSpielerKarte5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(lblSpielerKarte1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(lblSpielerKarte2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(lblSpielerKarte3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(lblSpielerKarte4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(lblSpielerKarte5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblSpielerKarte2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblSpielerKarte3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblSpielerKarte1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblSpielerKarte4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(lblSpielerKarte6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblSpielerKarte9, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblSpielerKarte8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblSpielerKarte10, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblSpielerKarte7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(120, 120, 120)
+                        .addComponent(btnNeueKarte)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(lblSpielerKarte6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(lblSpielerKarte10, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(lblSpielerKarte9, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(lblSpielerKarte8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(lblSpielerKarte7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(120, 120, 120)
-                .addComponent(btnNeueKarte)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnHold)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnNeueRunde)
-                .addContainerGap(164, Short.MAX_VALUE))
+                        .addComponent(btnHold)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnNeueRunde)
+                        .addContainerGap(164, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(SpielerPunkte)
+                        .addGap(18, 18, 18)
+                        .addComponent(DealerPunkte)
+                        .addGap(182, 182, 182))))
         );
 
         pack();
@@ -174,22 +193,28 @@ public class MeinSpiel extends javax.swing.JFrame {
     }//GEN-LAST:event_btnHoldActionPerformed
 
     private void btnNeueRundeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNeueRundeActionPerformed
-        // TODO add your handling code here:
-        System.out.println("BJ.MeinSpiel.btnNeueRundeActionPerformed()");
+        spieler.entferneAlleKarten();
+        dealer.entferneAlleKarten();
+        for (int i = 0; i < 5; i++) {
+            lblSpielerKarten.get(i).setIcon(null);
+        }
+        SpielerPunkte.setText("Spieler Punkte: 0");
+        DealerPunkte.setText("Dealer Punkte: 0");
+        
+        
     }//GEN-LAST:event_btnNeueRundeActionPerformed
 
     private void btnNeueKarteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNeueKarteActionPerformed
-        // TODO add your handling code here:
-        //System.out.println("BJ.MeinSpiel.btnNeueKarteActionPerformed()");
+       
+       dealer.gibKarte(spieler);
+        int current_size= spieler.getKartenInDerHand().size()-1;
+        lblSpielerKarten.get(current_size).setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten/" + spieler.getKartenInDerHand().get(current_size).toString() + ".jpg")));
+        SpielerPunkte.setText("Spieler Punkte: "+spieler.zählePunkte());
+        DealerPunkte.setText("Dealer Punkte: "+dealer.zählePunkte());
         
-        hintergrundspiel.getDealer().gibKarte(hintergrundspiel.getSpieler());
         
-        //lblSpielerKarte1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten/" + hintergrundspiel.getSpieler().getKartenInDerHand().get(0).toString() + ".jpg"))); // NOI18N
         
-        String pfad = this.getClass().getClassLoader().getResource("Karten/" + hintergrundspiel.getSpieler().getKartenInDerHand().get(count).toString() + ".jpg").getFile();
-        lblSpielerKarten.get(count).setIcon(new ImageIcon(pfad));
-        count++;
-        //JOptionPane.showMessageDialog(null, hintergrundspiel.getSpieler().toString());     
+           
     }//GEN-LAST:event_btnNeueKarteActionPerformed
 
     /**
@@ -228,6 +253,8 @@ public class MeinSpiel extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel DealerPunkte;
+    private javax.swing.JLabel SpielerPunkte;
     private javax.swing.JButton btnHold;
     private javax.swing.JButton btnNeueKarte;
     private javax.swing.JButton btnNeueRunde;

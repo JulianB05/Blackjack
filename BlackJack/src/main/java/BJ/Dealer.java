@@ -33,4 +33,12 @@ public class Dealer extends Spieler {
     public String toString() {
         return "Dealer{" + "stapel=" + stapel + '}' + super.toString();
     }
+
+    public BlackjackKartenstapel getStapel() {
+        return stapel;
+    }
+
+    
+    
+    
 }

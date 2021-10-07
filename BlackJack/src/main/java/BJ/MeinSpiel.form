@@ -25,15 +25,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="btnHold" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnNeueKarte" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnNeueRunde" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="lblSpielerKarte1" min="-2" pref="60" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -62,6 +54,19 @@
                       <Component id="jLabel2" min="-2" pref="44" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="285" max="-2" attributes="0"/>
                   </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="btnHold" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnNeueKarte" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnNeueRunde" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="SpielerPunkte" min="-2" max="-2" attributes="0"/>
+                          <Component id="DealerPunkte" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="224" max="-2" attributes="0"/>
+                  </Group>
               </Group>
           </Group>
       </Group>
@@ -71,40 +76,46 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="lblSpielerKarte5" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblSpielerKarte1" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
-                              <Component id="lblSpielerKarte2" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                              <Component id="lblSpielerKarte3" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="lblSpielerKarte5" max="32767" attributes="0"/>
+                                  <Component id="lblSpielerKarte2" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <Component id="lblSpielerKarte3" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <Component id="lblSpielerKarte1" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <Component id="lblSpielerKarte4" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
-                          <Component id="lblSpielerKarte4" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="lblSpielerKarte6" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="lblSpielerKarte9" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <Component id="lblSpielerKarte8" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <Component id="lblSpielerKarte10" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <Component id="lblSpielerKarte7" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
+                      <Component id="btnNeueKarte" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="lblSpielerKarte6" alignment="0" max="32767" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                              <Component id="lblSpielerKarte10" alignment="3" min="-2" pref="100" max="-2" attributes="0"/>
-                              <Component id="lblSpielerKarte9" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                              <Component id="lblSpielerKarte8" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="lblSpielerKarte7" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="btnHold" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnNeueRunde" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="164" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="SpielerPunkte" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="DealerPunkte" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="182" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
-              <Component id="btnNeueKarte" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="btnHold" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="btnNeueRunde" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="164" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -174,6 +185,16 @@
     <Component class="javax.swing.JLabel" name="lblSpielerKarte9">
     </Component>
     <Component class="javax.swing.JLabel" name="lblSpielerKarte10">
+    </Component>
+    <Component class="javax.swing.JLabel" name="SpielerPunkte">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Spieler Punkte:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="DealerPunkte">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Dealer Punkte:"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

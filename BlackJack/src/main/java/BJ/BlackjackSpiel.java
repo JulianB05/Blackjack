@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
  *
  * @author Martin
  */
-public class BlackjackSpiel {
+public class BlackjackSpiel{
 
     private Dealer dealer;
     private Spieler spieler;

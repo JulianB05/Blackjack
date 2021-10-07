@@ -30,25 +30,23 @@ public class Spieler extends Person {
 
     public int zählePunkte() {
 
-        int res = 0;
-        int ass = 0;
-
-        for (int i = 0; i < kartenInHand.size() - 1; i++) {
-
-            res = kartenInHand.get(i).getKartenwert();
-
-            if (kartenInHand.get(i).getKartenwert() == 11) {
-                ass++;
+        int result = 0;
+        int AnzahlAsse = 0;
+        for (Karte K : kartenInHand) {
+            if (K.getKartenwert() == 11) {
+                AnzahlAsse++;
             }
+            result += K.getKartenwert();
         }
 
-        if (res < 21) {
+ 
 
-            return res - (10 * ass);
-        } else {
-
-            return res;
+        if (result > 21 && AnzahlAsse > 0) {
+            result -= 10;
+        } else if (result > 21) {
+            System.out.println("Verloren");
         }
+        return result;
     }
 
     public void entferneAlleKarten() {
@@ -64,5 +62,13 @@ public class Spieler extends Person {
     public String toString() {
         return "Spieler{" + "nickname=" + nickname + ", kartenInHand=" + kartenInHand + '}' + super.toString();
     }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    
+    
+    
 
 }

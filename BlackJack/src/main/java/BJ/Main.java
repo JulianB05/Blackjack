@@ -15,7 +15,13 @@ public class Main {
 
         //BlackjackKartenstapel stapel = new BlackjackKartenstapel();
         //System.out.println(stapel.toString());
-        BlackjackSpiel blackjackSpiel = new BlackjackSpiel();
-        blackjackSpiel.spieleConsole();
+        //BlackjackSpiel blackjackSpiel = new BlackjackSpiel();
+        //blackjackSpiel.spieleConsole();
+        
+        BlackjackKartenstapel blackjackKartenstapel = new BlackjackKartenstapel();
+        blackjackKartenstapel.stapelinitialisieren();
+        System.out.println(blackjackKartenstapel.toString());
+        blackjackKartenstapel.mischen();
+        System.out.println(blackjackKartenstapel.toString());
     }
 }

@@ -26,12 +26,11 @@ public class BlackjackKartenstapel implements Kartenstapel {
 
         Random r = new Random();
         for (int i = 0; i < 1000; i++) {
-
-            int z1 = r.nextInt(52);
-            int z2 = r.nextInt(52);
-            Karte temp = karten.get(z1);
-            karten.set(z1, karten.get(z2));
-            karten.set(z1, temp);
+            int rand = r.nextInt(karten.size());
+            Karte safe =  karten.get(rand);
+            int rand2 = r.nextInt(karten.size());
+            karten.set(rand, karten.get(rand2));
+            karten.set(rand2, safe);
         }
     }
 
