@@ -38,13 +38,10 @@ public class Spieler extends Person {
             }
             result += K.getKartenwert();
         }
-
- 
-
-        if (result > 21 && AnzahlAsse > 0) {
-            result -= 10;
-        } else if (result > 21) {
-            System.out.println("Verloren");
+        if (result > 21 && AnzahlAsse != 0) {
+            for (int i = 0; i < AnzahlAsse; i++) {
+                result -= 10;
+            } 
         }
         return result;
     }
