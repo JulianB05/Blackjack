@@ -16,14 +16,74 @@ public class Spieler extends Person {
 
     protected String nickname;
     protected ArrayList<Karte> kartenInHand = new ArrayList<>();
+    protected int Geld;
 
     public Spieler(String nickname, String name, String nachname, Date geburtsdatum) {
 
         super(name, nachname, geburtsdatum);
         this.nickname = nickname;
         this.kartenInHand = kartenInHand;
+        this.Geld = 100;
+    }
+    public Spieler(String nickname, String name, String nachname, Date geburtsdatum, int geld) {
+
+        super(name, nachname, geburtsdatum);
+        this.nickname = nickname;
+        this.kartenInHand = kartenInHand;
+        this.Geld = geld;
+    }
+    public Spieler(String nickname, String name, String nachname, int Geld) {
+
+        super(name, nachname);
+        this.nickname = nickname;
+        this.kartenInHand = kartenInHand;
+        this.Geld = Geld;
+        this.geburtsdatum = new Date().getTime(); 
+    }
+     public Spieler(String nickname, String name, String nachname) {
+
+        super(name, nachname);
+        this.nickname = nickname;
+        this.kartenInHand = kartenInHand;
+        this.Geld = 100;
+        this.geburtsdatum = new Date().getTime(); 
+    }
+    
+     
+    public Spieler(String name, String nachname, Date geburtsdatum) {
+
+        super(name, nachname, geburtsdatum);
+        this.kartenInHand = kartenInHand;
+        this.Geld = 100;
+        this.nickname = "";
+    }
+    public Spieler(String name, String nachname, Date geburtsdatum, int Geld) {
+
+        super(name, nachname, geburtsdatum);
+        this.kartenInHand = kartenInHand;
+        this.Geld = Geld;
+        this.nickname = "";
+    }
+    public Spieler(String name, String nachname, int Geld) {
+
+        super(name, nachname);
+        this.kartenInHand = kartenInHand;
+        this.Geld = Geld;
+        this.geburtsdatum = new Date().getTime();
+        this.nickname = "";
+    }
+    
+    
+    public Spieler(String name, String nachname) {
+
+        super(name, nachname);
+        this.kartenInHand = kartenInHand;
+        this.Geld = 100;
+        this.geburtsdatum = new Date().getTime(); 
+        this.nickname = "";
     }
 
+    
     public void nimmKarten(Karte k) {
         kartenInHand.add(k);
     }

@@ -9,14 +9,54 @@ import javax.swing.JOptionPane;
  */
 public class BlackjackSpiel{
 
-    private Dealer dealer;
-    private Spieler spieler;
+    protected Dealer dealer;
+    protected Spieler spieler;
     //private BlackjackSpiel hintergrundspiel;
 
     public BlackjackSpiel() {
 
         dealer = new Dealer("Dealer", "Alfons", "Trudeau", new Date(1999, 1, 1));
-        spieler = new Spieler("Gustavus", "Gustav", "Monroe", new Date(2001, 1, 1));
+        spieler = new Spieler("Gustavus", "Gustav", "Monroe", new Date(2001, 1, 1));    
+    }
+    public BlackjackSpiel(String nickname, String name, String nachname, Date geburtsdatum) {
+        
+        dealer = new Dealer("Dealer", "Alfons", "Trudeau", new Date(1999, 1, 1));
+        spieler = new Spieler(nickname, name, nachname, geburtsdatum);       
+    }
+    public BlackjackSpiel(String nickname, String name, String nachname, Date geburtsdatum, int geld) {
+
+        dealer = new Dealer("Dealer", "Alfons", "Trudeau", new Date(1999, 1, 1));
+        spieler = new Spieler(nickname, name, nachname, geburtsdatum);  
+    }
+    public BlackjackSpiel(String nickname, String name, String nachname, int geld) {
+
+        dealer = new Dealer("Dealer", "Alfons", "Trudeau", new Date(1999, 1, 1));
+        spieler = new Spieler(nickname, name, nachname, geld);  
+    }
+    public BlackjackSpiel(String nickname, String name, String nachname) {
+
+        dealer = new Dealer("Dealer", "Alfons", "Trudeau", new Date(1999, 1, 1));
+        spieler = new Spieler(nickname, name, nachname);  
+    } 
+    public BlackjackSpiel(String name, String nachname, Date geburtsdatum) {
+        
+        dealer = new Dealer("Dealer", "Alfons", "Trudeau", new Date(1999, 1, 1));
+        spieler = new Spieler(name, nachname, geburtsdatum);  
+    }
+    public BlackjackSpiel(String name, String nachname, Date geburtsdatum, int geld) {
+
+        dealer = new Dealer("Dealer", "Alfons", "Trudeau", new Date(1999, 1, 1));
+        spieler = new Spieler(name, nachname, geburtsdatum, geld);  
+    }
+    public BlackjackSpiel(String name, String nachname, int geld) {
+
+        dealer = new Dealer("Dealer", "Alfons", "Trudeau", new Date(1999, 1, 1));
+        spieler = new Spieler(name, nachname, geld);  
+    }
+    public BlackjackSpiel(String name, String nachname) {
+
+        dealer = new Dealer("Dealer", "Alfons", "Trudeau", new Date(1999, 1, 1));
+        spieler = new Spieler(name, nachname);  
     }
 
     public void gibKarteAnSpieler() {

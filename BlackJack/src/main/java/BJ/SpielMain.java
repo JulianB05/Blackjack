@@ -14,10 +14,10 @@ import javax.swing.JOptionPane;
  *
  * @author Julian
  */
-public class MeinSpiel extends javax.swing.JFrame {
+public class SpielMain extends javax.swing.JFrame {
 
     /**
-     * Creates new form MeinSpiel
+     * Creates new form SpielMain
      */
     
     private ArrayList<JLabel> lblSpielerKarten;
@@ -29,7 +29,7 @@ public class MeinSpiel extends javax.swing.JFrame {
     private int SpielerWins1 =0;
     private int DealerWins1 =0;
     
-    public MeinSpiel() {
+    public SpielMain() {
         
         
         initComponents();
@@ -270,7 +270,9 @@ public class MeinSpiel extends javax.swing.JFrame {
             lblDealerKarten.get(i).setIcon(null);
         }
         SpielerPunkte.setText("Spieler Punkte: 0");
-        DealerPunkte.setText("Dealer Punkte: 0");    
+        DealerPunkte.setText("Dealer Punkte: 0");
+        String a = "";
+        Gewinner.setText("Gewinner: "+a);
     }//GEN-LAST:event_btnNeueRundeActionPerformed
 
     private void btnNeueKarteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNeueKarteActionPerformed
@@ -311,20 +313,21 @@ public class MeinSpiel extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MeinSpiel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SpielMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MeinSpiel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SpielMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MeinSpiel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SpielMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MeinSpiel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SpielMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MeinSpiel().setVisible(true);
+                new SpielMain().setVisible(true);
             }
         });
     }

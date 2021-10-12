@@ -23,6 +23,12 @@ public class Person {
         this.nachname = nachname;
         this.geburtsdatum = geburtsdatum.getTime();
     }
+    public Person(String name, String nachname) {
+
+        this.name = name;
+        this.nachname = nachname;
+        this.geburtsdatum = new Date().getTime(); 
+    }
 
     @Override
     public String toString() {

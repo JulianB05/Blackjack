@@ -22,6 +22,8 @@ public class Dealer extends Spieler {
         this.stapel = stapel;
         this.kartenInHand = new ArrayList<>();
     }
+    
+    
 
     public void gibKarte(Spieler s) {
 
