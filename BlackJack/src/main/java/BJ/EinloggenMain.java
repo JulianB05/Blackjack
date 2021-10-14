@@ -5,6 +5,12 @@
  */
 package BJ;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Julian
@@ -59,9 +65,21 @@ public class EinloggenMain extends javax.swing.JFrame {
             }
         });
 
+        lblGeld.setToolTipText("");
+        lblGeld.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lblGeldActionPerformed(evt);
+            }
+        });
+
         jLabel6.setText("Nickname");
 
         jButton1.setText("LOGIN");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -123,18 +141,70 @@ public class EinloggenMain extends javax.swing.JFrame {
 
     private void lblNachnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblNachnameActionPerformed
         // TODO add your handling code here:
-        if (lblNickname.getText() != "") {
-           if (lblGeld.getText() == "" && lblGeburtsdatum.getText() == "") {
-               
-           }
-           if (lblGeld.getText() != "" && lblGeburtsdatum.getText() == "") {
-            
-           }
-           if (lblGeld.getText() == "" && lblGeburtsdatum.getText() != "") {
-            
-           }
-        }
     }//GEN-LAST:event_lblNachnameActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+
+        String sDate = lblGeburtsdatum.getText();  
+        Date date1 = null;
+        try {  
+            date1=new SimpleDateFormat("dd/MM/yyyy").parse(sDate);
+        } catch (ParseException ex) {
+            Logger.getLogger(EinloggenMain.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        String sGeld = lblGeld.getText();
+        int geld = Integer.parseInt(sGeld);
+        
+        if (lblNickname.getText().length() != 0) {
+            if (lblGeld.getText().length() == 0 && lblGeburtsdatum.getText().length() == 0) {
+                
+                newspieler = new Spieler(lblNickname.getText(), lblVorname.getText(), lblNachname.getText());
+                System.out.println("BJ.EinloggenMain.jButton1ActionPerformed()");
+            }
+            if (lblGeld.getText().length() != 0 && lblGeburtsdatum.getText().length() == 0) {
+                
+                newspieler = new Spieler(lblNickname.getText(), lblVorname.getText(), lblNachname.getText(),  geld);
+                System.out.println("BJ.EinloggenMain.jButton1ActionPerformed()");
+            }
+            if (lblGeld.getText().length() == 0 && lblGeburtsdatum.getText().length() != 0) {
+                
+                newspieler = new Spieler(lblNickname.getText(), lblVorname.getText(), lblNachname.getText(), date1);
+                System.out.println("BJ.EinloggenMain.jButton1ActionPerformed()");
+            }
+            if (lblGeld.getText().length() != 0 && lblGeburtsdatum.getText().length() != 0) {
+                
+                newspieler = new Spieler(lblNickname.getText(), lblVorname.getText(), lblNachname.getText(), date1,  geld);
+                System.out.println("BJ.EinloggenMain.jButton1ActionPerformed()");
+            }
+        }
+        else if (lblGeld.getText().length() != 0) {
+            
+            newspieler = new Spieler(lblVorname.getText(), lblNachname.getText(), geld); 
+            System.out.println("BJ.EinloggenMain.jButton1ActionPerformed()");
+        }
+        else if (lblGeburtsdatum.getText().length() != 0) {
+            
+            newspieler = new Spieler(lblVorname.getText(), lblNachname.getText(), date1);
+            System.out.println("BJ.EinloggenMain.jButton1ActionPerformed()");
+        }
+        else if (lblGeld.getText().length() != 0 && lblGeld.getText().length() != 0) {
+            
+            newspieler = new Spieler(lblVorname.getText(), lblNachname.getText(), date1, geld);
+            System.out.println("BJ.EinloggenMain.jButton1ActionPerformed()");
+        }
+        else{
+            
+            newspieler = new Spieler(lblVorname.getText(), lblNachname.getText()); 
+            System.out.println("BJ.EinloggenMain.jButton1ActionPerformed()");
+        }
+        
+        new SpielMain(newspieler);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void lblGeldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblGeldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblGeldActionPerformed
 
     /**
      * @param args the command line arguments

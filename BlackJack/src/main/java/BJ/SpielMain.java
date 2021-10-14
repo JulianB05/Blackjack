@@ -6,6 +6,7 @@
 package BJ;
 
 import java.util.ArrayList;
+import java.util.Date;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -29,7 +30,7 @@ public class SpielMain extends javax.swing.JFrame {
     private int SpielerWins1 =0;
     private int DealerWins1 =0;
     
-    public SpielMain() {
+    public SpielMain(Spieler s) {
         
         
         initComponents();
@@ -327,7 +328,8 @@ public class SpielMain extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SpielMain().setVisible(true);
+                Spieler spieler = new Spieler("Gustavus", "Gustav", "Monroe", new Date(2001, 1, 1));
+                new SpielMain(spieler).setVisible(true);
             }
         });
     }
