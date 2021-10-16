@@ -18,11 +18,12 @@ import java.util.logging.Logger;
 public class EinloggenMain extends javax.swing.JFrame {
 
     protected Spieler newspieler;
+
     /**
      * Creates new form EinloggenMain
      */
     public EinloggenMain() {
-        initComponents();  
+        initComponents();
     }
 
     /**
@@ -145,61 +146,64 @@ public class EinloggenMain extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-
-        String sDate = lblGeburtsdatum.getText();  
-        Date date1 = null;
-        try {  
-            date1=new SimpleDateFormat("dd/MM/yyyy").parse(sDate);
-        } catch (ParseException ex) {
-            Logger.getLogger(EinloggenMain.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        String sGeld = lblGeld.getText();
-        int geld = Integer.parseInt(sGeld);
         
+        Date date1 = null;
+        if (lblGeburtsdatum.getText().length() != 0) {
+            String sDate = lblGeburtsdatum.getText();
+            
+            try {
+                date1 = new SimpleDateFormat("dd/MM/yyyy").parse(sDate);
+            } catch (ParseException ex) {
+                Logger.getLogger(EinloggenMain.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+        int geld = 0;
+        if (lblGeld.getText().length() != 0) {
+            String sGeld = lblGeld.getText();
+            geld = Integer.parseInt(sGeld);
+        }
+
         if (lblNickname.getText().length() != 0) {
-            if (lblGeld.getText().length() == 0 && lblGeburtsdatum.getText().length() == 0) {
-                
+            if (lblGeld.getText().isBlank() == true && lblGeburtsdatum.getText().length() == 0) {
+
                 newspieler = new Spieler(lblNickname.getText(), lblVorname.getText(), lblNachname.getText());
                 System.out.println("BJ.EinloggenMain.jButton1ActionPerformed()");
             }
-            if (lblGeld.getText().length() != 0 && lblGeburtsdatum.getText().length() == 0) {
-                
-                newspieler = new Spieler(lblNickname.getText(), lblVorname.getText(), lblNachname.getText(),  geld);
+            if (lblGeld.getText().isBlank() != true && lblGeburtsdatum.getText().length() == 0) {
+
+                newspieler = new Spieler(lblNickname.getText(), lblVorname.getText(), lblNachname.getText(), geld);
                 System.out.println("BJ.EinloggenMain.jButton1ActionPerformed()");
             }
-            if (lblGeld.getText().length() == 0 && lblGeburtsdatum.getText().length() != 0) {
-                
+            if (lblGeld.getText().isBlank() == true && lblGeburtsdatum.getText().length() != 0) {
+
                 newspieler = new Spieler(lblNickname.getText(), lblVorname.getText(), lblNachname.getText(), date1);
                 System.out.println("BJ.EinloggenMain.jButton1ActionPerformed()");
             }
-            if (lblGeld.getText().length() != 0 && lblGeburtsdatum.getText().length() != 0) {
-                
-                newspieler = new Spieler(lblNickname.getText(), lblVorname.getText(), lblNachname.getText(), date1,  geld);
+            if (lblGeld.getText().isBlank() != true && lblGeburtsdatum.getText().length() != 0) {
+
+                newspieler = new Spieler(lblNickname.getText(), lblVorname.getText(), lblNachname.getText(), date1, geld);
                 System.out.println("BJ.EinloggenMain.jButton1ActionPerformed()");
             }
-        }
-        else if (lblGeld.getText().length() != 0) {
-            
-            newspieler = new Spieler(lblVorname.getText(), lblNachname.getText(), geld); 
-            System.out.println("BJ.EinloggenMain.jButton1ActionPerformed()");
-        }
-        else if (lblGeburtsdatum.getText().length() != 0) {
-            
-            newspieler = new Spieler(lblVorname.getText(), lblNachname.getText(), date1);
-            System.out.println("BJ.EinloggenMain.jButton1ActionPerformed()");
-        }
-        else if (lblGeld.getText().length() != 0 && lblGeld.getText().length() != 0) {
-            
+        } else if (lblGeld.getText().isBlank() != true && lblGeburtsdatum.getText().length() != 0) {
+
             newspieler = new Spieler(lblVorname.getText(), lblNachname.getText(), date1, geld);
             System.out.println("BJ.EinloggenMain.jButton1ActionPerformed()");
-        }
-        else{
-            
-            newspieler = new Spieler(lblVorname.getText(), lblNachname.getText()); 
+        } else if (lblGeld.getText().isBlank() != true) {
+
+            newspieler = new Spieler(lblVorname.getText(), lblNachname.getText(), geld);
+            System.out.println("BJ.EinloggenMain.jButton1ActionPerformed()");
+        } else if (lblGeburtsdatum.getText().length() != 0) {
+
+            newspieler = new Spieler(lblVorname.getText(), lblNachname.getText(), date1);
+            System.out.println("BJ.EinloggenMain.jButton1ActionPerformed()");
+        } else {
+
+            newspieler = new Spieler(lblVorname.getText(), lblNachname.getText());
             System.out.println("BJ.EinloggenMain.jButton1ActionPerformed()");
         }
-        
-        new SpielMain(newspieler);
+        SpielMain spielMain = new SpielMain(newspieler);
+        spielMain.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void lblGeldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblGeldActionPerformed

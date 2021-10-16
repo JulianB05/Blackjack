@@ -49,7 +49,7 @@ public class SpielMain extends javax.swing.JFrame {
         lblDealerKarten.add(lblDealerKarten5);
         
         hintergrundspiel = new BlackjackSpiel();
-        spieler = hintergrundspiel.getSpieler();
+        spieler = s;
         dealer = hintergrundspiel.getDealer();
         
         
